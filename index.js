@@ -24,7 +24,7 @@ startBtn.addEventListener("click", () => {
     Promise.race(promises).then(({ horse, time }) => {
         winnerField.textContent = `🎉 Переможець ${horse}, финишував за ${time}часу`; 
 
-        updateTable({horse, time});
+        updateTable({horse, time, raceCounter});
 
       });
 
@@ -50,7 +50,7 @@ function run(horse) {
 }
 
 
-function updateTable({horse, time}) {
+function updateTable({horse, time, raceCounter}) {
      const tr = `<tr><td>${raceCounter}</td><td>${horse}</td><td>${time}</td></tr>`
 
      table.insertAdjacentHTML("beforeend", tr);
